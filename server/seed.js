@@ -8,14 +8,15 @@ mongoose.connect('mongodb://localhost:27017/taxrates', {
 const CountrySchema = new mongoose.Schema({
   name: String,
   taxRate: Number,
+  averageSalary: Number,
 });
 const Country = mongoose.model('Country', CountrySchema);
 
 const seedData = [
-  { name: 'United States', taxRate: 21 },
-  { name: 'Germany', taxRate: 29.8 },
-  { name: 'India', taxRate: 30 },
-  { name: 'Canada', taxRate: 26.5 },
+  { name: 'United States', taxRate: 21, averageSalary: 60000 },
+  { name: 'Germany', taxRate: 29.8, averageSalary: 54000 },
+  { name: 'India', taxRate: 30, averageSalary: 10000 },
+  { name: 'Canada', taxRate: 26.5, averageSalary: 50000 },
 ];
 
 Country.insertMany(seedData)

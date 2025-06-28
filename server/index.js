@@ -14,6 +14,7 @@ mongoose.connect('mongodb://localhost:27017/taxrates', {
 const CountrySchema = new mongoose.Schema({
   name: String,
   taxRate: Number,
+  averageSalary: Number, // ➕ Added field
 });
 const Country = mongoose.model('Country', CountrySchema);
 
